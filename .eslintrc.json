@@ -1,0 +1,61 @@
+{
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "testing-library",
+    "react-hooks",
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "eqeqeq": "error",
+    "no-irregular-whitespace": "error",
+    "no-multi-spaces": "error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-trailing-spaces": "error",
+    "no-buffer-constructor": "error",
+    "keyword-spacing": "error",
+    "space-before-blocks": "error",
+    "@typescript-eslint/no-use-before-define": "off",
+    "semi": "error",
+    "quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "never"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "@typescript-eslint/ban-types": "off",
+    "react/prop-types": 0,
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "beforeSelfClosing": "never"
+      }
+    ],
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
+  "env": {
+    "jest": true
+  }
+}
