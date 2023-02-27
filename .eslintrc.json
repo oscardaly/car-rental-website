@@ -43,7 +43,8 @@
         "beforeSelfClosing": "never"
       }
     ],
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@next/next/no-img-element": "off"
   },
   "overrides": [
     // Only uses Testing Library lint rules in test files
