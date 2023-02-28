@@ -12,12 +12,17 @@ const Header = () => {
         <img
           src="/svg/logo.svg"
           height="100%"
-          alt="NOS Rentals"
+          alt="NOS Rentals Logo"
         />
       </Link>
 
       <div className={s.header__items}>
-        <h2>{context.currency}</h2>
+        <h2 className={s.options}>{context.currency} | EN</h2>
+        <div className={s.header__items}>
+          <Link className={s.header__button} href="/">Log In </Link>
+          <h2>|</h2>
+          <Link className={s.header__button} href="/"> Sign Up</Link>
+        </div>
       </div>
     </div>
   );
