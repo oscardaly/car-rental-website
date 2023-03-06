@@ -11,18 +11,30 @@
     width: 30%;
 }
 
+.aboutUsArticle__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+    margin-bottom: 18px;
+}
+
 .form > button[type="submit"] {
     align-self: center;
-    margin-top: 8px;
+    margin-top: 15px;
     width: 40%;
 }
 
-.form__heading {
+.form > label > h4 {
     text-align: left;
-    margin-top: 4px;
+    margin-top: 12px;
     margin-bottom: 4px;
 }
 
 .form__input {
     width: 100%;
+}
+
+.contactUs__header {
+    margin-bottom: 10px;
 }
