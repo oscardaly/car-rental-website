@@ -1,3 +1,10 @@
+/* used to remove arrow from side of dropdown */
 .currencySelector {
-    margin-right: 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+}
+
+.currencySelector {
+    margin-right: 10px;
 }

@@ -12,7 +12,7 @@ export const CurrencySelector: FC = () => {
 
 
   return (
-    <select value={currency} onChange={handleCurrencySelection} className={styles.currencySelector} data-testid="CurrencySelector">
+    <select value={currency} onChange={handleCurrencySelection} data-testid="CurrencySelector" className={styles.currencySelector}>
       {
         currencies.map((currency, index) => (
           <option value={currency} key={index}>{currency}</option>)
