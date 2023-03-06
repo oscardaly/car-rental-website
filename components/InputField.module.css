@@ -1,0 +1,12 @@
+.inputField {
+    color: #5E5E5E;
+    border: 4px solid #94CDD1;
+    padding: 5px;
+    font-family: Lexend, sans-serif;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.inputField__textArea {
+    resize: vertical;
+}

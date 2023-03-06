@@ -20,7 +20,7 @@
 .header__items > * {
     background-color: transparent;
     border: none;
-    font: bold 1.5em Lexend, sans-serif;
+    font: bold 18px Lexend, sans-serif;
     color: black;
     display: flex;
 }
