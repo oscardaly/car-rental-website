@@ -1,4 +1,4 @@
-import {useAppContext} from "../context/state";
+import {useAppContext} from "../../context/state";
 
 // In a real project we would use an api to do this calculation
 const EU_EXCHANGE_RATE = 1.13;

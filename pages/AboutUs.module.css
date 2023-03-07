@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.aboutUsArticle > h2 {
+    margin-bottom: 0;
+}
+
 .form {
     display: flex;
     flex-direction: column;

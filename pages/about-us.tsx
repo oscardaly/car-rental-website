@@ -2,16 +2,37 @@ import {FC, FormEvent, useState} from "react";
 import styles from "./AboutUs.module.css";
 import {InputField, TextArea} from "@/components/InputField";
 import {Button} from "@/components/Button";
+import {useFormField} from "../helpers/hooks/UseFormField";
+import {isValidEmail} from "../helpers/validation/IsValidEmail";
 
 const AboutUs: FC = () => {
-  const [email, setEmail] = useState("");
-  const [enquiryText, setEnquiryText] = useState("");
+  const [email, setEmailValue, setEmailError, resetEmail] = useFormField("");
+  const [enquiryText, setEnquiryText, setEnquiryError, resetEnquiry] = useFormField("");
   const [honeypotValue, setHoneypotValue] = useState<string>();
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     if (honeypotValue) return;
+
+    let isValid = true;
+
+    if (enquiryText.value === "") {
+      setEnquiryError("The enquiry must not be empty.");
+      isValid = false;
+    }
+
+    if (!isValidEmail(email.value)) {
+      setEmailError("Please enter a valid email.");
+      isValid = false;
+    }
+
+    if (isValid) {
+      resetEmail();
+      resetEnquiry();
+      console.log("Send form values to backend");
+    }
+
+    //TODO: add tests for this form
   };
 
   return (
@@ -37,8 +58,9 @@ const AboutUs: FC = () => {
          <h4>Email</h4>
         </label>
         <InputField
-          value={email}
-          setValue={setEmail}
+          value={email.value}
+          setValue={setEmailValue}
+          errorMessage={email.errorMessage}
           placeholder={"you@example.com"}
           className={styles.form__input}
           name="email"
@@ -48,8 +70,9 @@ const AboutUs: FC = () => {
           <h4>Enquiry</h4>
         </label>
         <TextArea
-          value={enquiryText}
+          value={enquiryText.value}
           setValue={setEnquiryText}
+          errorMessage={enquiryText.errorMessage}
           placeholder={"Your enquiry description"}
           className={styles.form__input}
           id="contact-us-form-enquiry"

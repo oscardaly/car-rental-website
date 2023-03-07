@@ -1,5 +1,5 @@
-import {useAppContext} from "../../context/state";
-import {usePriceCalculator} from "../../hooks/UsePriceCalculator";
+import {useAppContext} from "../../../context/state";
+import {usePriceCalculator} from "../../../helpers/hooks/UsePriceCalculator";
 
 jest.mock("../../context/state");
 

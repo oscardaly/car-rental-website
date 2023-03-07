@@ -1,5 +1,4 @@
 .inputField {
-    color: #5E5E5E;
     border: 4px solid #94CDD1;
     padding: 5px;
     font-family: Lexend, sans-serif;
@@ -20,4 +19,16 @@
     width: 0;
     z-index: -1;
     tab-index: -1;
+}
+
+.inputField.errorInputField {
+    border: 4px solid #F95738;
+}
+
+.errorMessage {
+    color: #F95738;
+}
+
+.errorMessage h5 {
+    margin: 0;
 }
