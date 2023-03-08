@@ -42,6 +42,7 @@ export const InputField: FC<Props> = (
         placeholder={placeholder}
         name={name}
         id={id}
+        data-testid={isHoneyPot ? "honeypot-field" : undefined}
       />
       <ErrorOutput errorMessage={errorMessage}/>
     </>
