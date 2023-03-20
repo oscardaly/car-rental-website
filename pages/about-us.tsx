@@ -5,6 +5,7 @@ import {Button} from "@/components/Button";
 import {useFormField} from "../helpers/hooks/UseFormField";
 import {isValidEmail} from "../helpers/validation/IsValidEmail";
 import Head from "next/head";
+import {toast} from "react-toastify";
 
 const AboutUs: FC = () => {
   const [email, setEmailValue, setEmailError, resetEmail] = useFormField("");
@@ -30,7 +31,7 @@ const AboutUs: FC = () => {
     if (isValid) {
       resetEmail();
       resetEnquiry();
-      console.log("Send form values to backend");
+      toast("Successfully sent the form!", {type: "success"});
     }
   };
 
@@ -38,7 +39,7 @@ const AboutUs: FC = () => {
     <div className={styles.aboutUsArticle}>
       <Head>
         <title>About NOS Rentals</title>
-        <meta name="description">Welcome to NOS rentals! Learn all about us.</meta>
+        <meta name="description" content="Welcome to NOS rentals! Learn all about us."/>
       </Head>
       <h2>About Us</h2>
       <div className={styles.aboutUsArticle__content}>

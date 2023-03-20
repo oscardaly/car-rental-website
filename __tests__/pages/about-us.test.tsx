@@ -1,10 +1,13 @@
 import {fireEvent, render, screen} from "@testing-library/react";
 import AboutUs from "@/pages/about-us";
 import userEvent from "@testing-library/user-event";
+import {toast} from "react-toastify";
+
+jest.mock("react-toastify");
+
+const mockToast = jest.mocked(toast);
 
 describe("Contact us form", () => {
-  const logSpy = jest.spyOn(global.console, "log");
-
   beforeEach( () => {
     jest.clearAllMocks();
   });
@@ -18,7 +21,7 @@ describe("Contact us form", () => {
 
     expect(emailField).toHaveValue("");
     expect(enquiryField).toHaveValue("");
-    expect(logSpy).toHaveBeenCalledWith("Send form values to backend");
+    expect(mockToast).toHaveBeenCalledWith("Successfully sent the form!", {"type": "success"});
   });
 
   it("should display an error if the email is invalid", async () => {
@@ -45,7 +48,7 @@ describe("Contact us form", () => {
 
     fireEvent.change(honeypot, {target: {value: "Any value"}});
 
-    expect(logSpy).not.toHaveBeenCalledWith("Send form values to backend");
+    expect(mockToast).not.toHaveBeenCalledWith("Successfully sent the form!", {"type": "success"});
   });
 
   const fillInFormField = async (placeholderText: string, text: string) => {
