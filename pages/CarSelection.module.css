@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.search__input {
+    margin: 10px;
+}
+
+.sort__select {
+    border: none;
+}
