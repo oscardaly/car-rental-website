@@ -4,6 +4,7 @@ import {InputField, TextArea} from "@/components/InputField";
 import {Button} from "@/components/Button";
 import {useFormField} from "../helpers/hooks/UseFormField";
 import {isValidEmail} from "../helpers/validation/IsValidEmail";
+import Head from "next/head";
 
 const AboutUs: FC = () => {
   const [email, setEmailValue, setEmailError, resetEmail] = useFormField("");
@@ -35,10 +36,14 @@ const AboutUs: FC = () => {
 
   return (
     <div className={styles.aboutUsArticle}>
+      <Head>
+        <title>About NOS Rentals</title>
+        <meta name="description">Welcome to NOS rentals! Learn all about us.</meta>
+      </Head>
       <h2>About Us</h2>
       <div className={styles.aboutUsArticle__content}>
         <p>
-          Welcome to our Car Rental about page!
+          Welcome to NOS rentals!
           We are a premier luxury car rental service that prides ourselves on delivering exceptional customer service and high-quality vehicles.
         </p>
         <p>
