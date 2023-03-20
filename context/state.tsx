@@ -1,7 +1,7 @@
 import React, {createContext, FC, ReactNode, useContext, useState} from "react";
 import {Currency} from "./model/Currency";
 import {State} from "./model";
-import {useEffectOnFirstRender} from "../hooks/UseEffectOnFirstRender";
+import {useEffectOnFirstRender} from "../helpers/hooks/UseEffectOnFirstRender";
 
 const initialStateValues = {
   currency: "GBP"

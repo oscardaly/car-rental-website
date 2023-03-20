@@ -1,0 +1,34 @@
+.inputField {
+    border: 4px solid #94CDD1;
+    padding: 5px;
+    font-family: Lexend, sans-serif;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.inputField__textArea {
+    resize: vertical;
+}
+
+.honeypot {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    tab-index: -1;
+}
+
+.inputField.errorInputField {
+    border: 4px solid #F95738;
+}
+
+.errorMessage {
+    color: #F95738;
+}
+
+.errorMessage h5 {
+    margin: 0;
+}
