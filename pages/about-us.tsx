@@ -31,8 +31,6 @@ const AboutUs: FC = () => {
       resetEnquiry();
       console.log("Send form values to backend");
     }
-
-    //TODO: add tests for this form
   };
 
   return (
