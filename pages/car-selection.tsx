@@ -1,11 +1,13 @@
-import styles from "@/pages/CarSelection.module.css";
+import styles from "@/pages/car-selection.module.css";
 import Head from "next/head";
+import {FC} from "react";
 import {InputField} from "@/components/InputField";
-export default function CarSelection() {
+
+const CarSelection: FC = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Page Title</title>
+        <title>Select Car</title>
       </Head>
       <div className={styles.header}>
         <p>.../Car Selection</p>
@@ -29,4 +31,6 @@ export default function CarSelection() {
       </div>
     </div>
   );
-}
+};
+
+export default CarSelection;
