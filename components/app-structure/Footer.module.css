@@ -1,4 +1,6 @@
 .footer__component {
+    position: fixed;
+    bottom: 0;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -6,16 +8,33 @@
 }
 
 .footer__image {
-    background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
-    height: fit-content;
-    width: auto;
+    height: 100%;
+    width: 40%;
     max-height: 250px;
+    max-width: 700px;
+}
+
+.gradient {
+    background: linear-gradient(to left, blue, red);
 }
 
 .footer__table {
-    width: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    /*background-image: ;*/
+}
+
+.footer__row {
+    width: 100%;
+}
+
+.footer__column {
+    width: 33%;
+    padding: 15px;
+    place-items: start;
+}
+
+.footer__div {
+    width: 50%;
+    padding: 10px;
 }
