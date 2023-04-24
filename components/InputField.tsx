@@ -10,6 +10,9 @@ interface Props {
   name?: string;
   id?: string;
   errorMessage?: string;
+  type?: string;
+  min?: string | number
+  testId?: string
 }
 
 export const InputField: FC<Props> = (
@@ -21,7 +24,9 @@ export const InputField: FC<Props> = (
     isHoneyPot = false,
     name,
     id,
-    errorMessage
+    errorMessage,
+    type,
+    testId
   }
 ) => {
   const onChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -42,7 +47,8 @@ export const InputField: FC<Props> = (
         placeholder={placeholder}
         name={name}
         id={id}
-        data-testid={isHoneyPot ? "honeypot-field" : undefined}
+        data-testid={testId}
+        type={type}
       />
       <ErrorOutput errorMessage={errorMessage}/>
     </>

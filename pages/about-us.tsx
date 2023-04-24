@@ -81,7 +81,12 @@ const AboutUs: FC = () => {
           className={styles.form__input}
           id="contact-us-form-enquiry"
         />
-        <InputField value={honeypotValue} setValue={setHoneypotValue} isHoneyPot/>
+        <InputField
+          testId={"honeypot-field"}
+          value={honeypotValue}
+          setValue={setHoneypotValue}
+          isHoneyPot
+        />
         <Button type="submit">
           Submit
         </Button>
