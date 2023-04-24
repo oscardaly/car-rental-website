@@ -12,8 +12,10 @@
     "date-fns": "^2.29.3",
     "next": "latest",
     "react": "^18.1.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18.1.0",
-    "react-toastify": "^9.1.1"
+    "react-toastify": "^9.1.1",
+    "react-use": "^17.4.0"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.1.6",
