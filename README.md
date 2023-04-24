@@ -10,5 +10,7 @@
 ## Google Lighthouse
 
 To run a Google Lighthouse test and open the results in the browser run:
-`lighthouse http://localhost:3000/ --view`
+1. `npm install -g lighthouse`
+2. `lighthouse http://localhost:3000/ --view`
+
 or replace the url with whatever page you would like to test
