@@ -1,7 +1,7 @@
 import {fireEvent, render, screen} from "@testing-library/react";
 import AboutUs from "@/pages/about-us";
-import userEvent from "@testing-library/user-event";
 import {toast} from "react-toastify";
+import {clickSubmitButton, fillInFormField} from "../_testing-helpers/ReactTestingLibrary";
 
 jest.mock("react-toastify");
 
@@ -17,7 +17,7 @@ describe("Contact us form", () => {
     const emailField = await fillInFormField("you@example.com", "test@test.com");
     const enquiryField = await fillInFormField("Your enquiry description", "Dummy description");
 
-    await userEvent.click(await screen.findByText("Submit"));
+    await clickSubmitButton();
 
     expect(emailField).toHaveValue("");
     expect(enquiryField).toHaveValue("");
@@ -28,7 +28,7 @@ describe("Contact us form", () => {
     render(<AboutUs/>);
     await fillInFormField("you@example.com", "test");
 
-    await userEvent.click(await screen.findByText("Submit"));
+    await clickSubmitButton();
 
     const error = await screen.findByText("Please enter a valid email.");
     expect(error).toBeDefined();
@@ -36,7 +36,8 @@ describe("Contact us form", () => {
 
   it("should display an error if the enquiry is empty", async () => {
     render(<AboutUs/>);
-    await userEvent.click(await screen.findByText("Submit"));
+
+    await clickSubmitButton();
 
     const error = await screen.findByText("The enquiry must not be empty.");
     expect(error).toBeDefined();
@@ -50,10 +51,4 @@ describe("Contact us form", () => {
 
     expect(mockToast).not.toHaveBeenCalledWith("Successfully sent the form!", {"type": "success"});
   });
-
-  const fillInFormField = async (placeholderText: string, text: string) => {
-    const field = await screen.findByPlaceholderText(placeholderText);
-    await userEvent.type(field, text);
-    return field;
-  };
 });

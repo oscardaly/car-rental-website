@@ -27,7 +27,6 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({images}) => {
 
   return (
     <div className={styles.carousel}>
-      <div className={styles.overlay}></div>
       {images.map((image, index) => (
         <img
           key={index}

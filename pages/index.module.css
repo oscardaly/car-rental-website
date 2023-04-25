@@ -1,3 +1,48 @@
 .index {
     height: 100%;
 }
+
+.carouselWrapper {
+    /*TODO: change when we have more content on this screen*/
+    height: 100%;
+    position: relative;
+}
+
+.callsToAction {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    margin: 1rem 1.65rem 1rem 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #d5d5d5;
+    box-shadow: 0 24px 24px rgba(0, 0, 0, 1);
+    z-index: 3;
+    width: 50%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.callsToAction > form > h3 {
+    margin-top: 0;
+}
+
+.callsToAction > form > label > h5 {
+    margin: 0;
+    padding-bottom: 0.25rem;
+    padding-top: 0.5rem;
+}
+
+.callsToAction > form > * {
+    width: 100%;
+}
+
+.callsToAction > form > input {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.callsToAction > form > button[type="submit"] {
+    margin-top: 1rem;
+}
