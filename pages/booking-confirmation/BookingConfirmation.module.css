@@ -1,0 +1,30 @@
+.table {
+    max-width: 550px;
+    max-height: 200px;
+    padding-top: 30px;
+}
+
+.row__left {
+    text-align: right;
+    padding: 30px;
+    font-size: 16px;
+    max-width: 200px;
+}
+
+.row__right {
+    text-align: left;
+    padding: 30px;
+    font-size: 16px;
+    max-width: 200px;
+}
+
+.car__image {
+    width: 200px;
+    height: 200px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
