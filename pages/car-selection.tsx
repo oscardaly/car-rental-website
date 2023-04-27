@@ -1,10 +1,27 @@
 import styles from "@/pages/car-selection.module.css";
 import Head from "next/head";
-import {FC} from "react";
+import {FC, useEffect, useState} from "react";
 import {InputField} from "@/components/InputField";
 import {CarCard} from "@/components/CarCard";
+import {Car} from "@/components/Car";
 
 const CarSelection: FC = () => {
+  const [cars, setCars] = useState<Car[]>([]);
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      try {
+        const response = await fetch("/CarData.json");
+        const carsData = await response.json();
+        setCars(carsData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchCars();
+  }, []);
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -30,6 +47,8 @@ const CarSelection: FC = () => {
           </select>
         </div>
       </div>
+      <img src="/line.png"
+      />
       <div className={styles.car__container}>
         <div className={styles.filter}>
           <p>Filter by:</p>
@@ -37,7 +56,7 @@ const CarSelection: FC = () => {
             <p><strong>Price</strong></p>
           </div>
           <div className={styles.filter__content}>
-            <p>£75</p>
+            <p data-filter="75">£75</p>
             <p>£100</p>
             <p>£125</p>
             <p>£150</p>
@@ -75,9 +94,9 @@ const CarSelection: FC = () => {
           </div>
         </div>
         <div className={styles.car__card}>
-          <CarCard/>
-          <CarCard/>
-          <CarCard/>
+          { cars.map((car) => (
+            <CarCard key={car.id} car={car}/>
+          ))}
         </div>
       </div>
     </div>

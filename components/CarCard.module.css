@@ -1,13 +1,13 @@
 .car__card {
     box-shadow: 0 8px 24px rgba(148, 205, 209, 0.75);
     border: 1px solid black;
+    height: 250px;
     max-width: 1200px;
     min-width: 1100px;
     margin: 15px;
     padding: 30px;
     display: flex;
     justify-content: space-between;
-    height: 300px;
     align-items: center;
 }
 
@@ -17,6 +17,6 @@
 
 
 .car__image{
-    width: 600px;
-    height: 300px;
+    width: 500px;
+    height: 250px;
 }
