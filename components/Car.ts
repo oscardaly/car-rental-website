@@ -3,7 +3,7 @@ export interface Car {
   make: string;
   model: string;
   price: number;
-  power: string;
+  power: number;
   zeroToSixtyTime: number;
   seats: number;
   transmission: string;

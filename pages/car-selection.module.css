@@ -16,7 +16,7 @@
 .filter{
     width: 130px;
     border: 5px solid #94CDD1;
-    line-height: 10px;
+    line-height: 20px;
     padding: 30px;
     margin-left: 30px;
     height: 665px;
@@ -25,6 +25,9 @@
 
 .filter__content{
     padding-left: 30px;
+    color: black !important;
+    display: flex;
+    flex-direction: column;
 }
 
 .filter__header{
@@ -39,5 +42,9 @@
 .car__card {
     margin: 0 auto;
     text-align: center;
+}
+
+.a {
+    display: block;
 }
 

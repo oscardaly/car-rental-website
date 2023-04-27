@@ -10,6 +10,7 @@ import {useAppContext} from "../context/state";
 import {useRouter} from "next/router";
 import {useGetHomescreenImages} from "../helpers/hooks/UseGetHomescreenImages";
 
+
 export default function Home() {
   const context = useAppContext();
   const router = useRouter();
@@ -61,6 +62,7 @@ export default function Home() {
       await router.push("/car-selection");
     }
   };
+  const {car} = useAppContext();
 
   return (
     <div className={styles.index}>

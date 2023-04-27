@@ -1,18 +1,34 @@
-import React, {FC} from "react";
+import React, {FC, FormEvent, useContext} from "react";
 import {Button} from "@/components/Button";
 import styles from "./CarCard.module.css";
 import {Car} from "@/components/Car";
+import {useRouter} from "next/router";
+import {useAppContext} from "../context/state";
+import {SelectedCarContext} from "../context/model/SelectedCarContext";
+
 
 interface Props {
   car: Car;
 }
 
 export const CarCard: FC<Props> = ({car}) => {
+  const router = useRouter();
+  const context = useAppContext();
+  const selectedCarContext = useContext(SelectedCarContext);
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    context.setCar(car); // Pass the selected car to the context
+    await router.push("/");
+  };
+
+
   return (
-    <div className={styles.car__card}>
+    <SelectedCarContext.Provider value={selectedCarContext}>
+    <form onSubmit={onSubmit} className={styles.car__card}>
       <div className={styles.car__content}>
         <h1>{car.make} {car.model}</h1>
-        <p>Price: {car.price}</p>
+        <p>Price: £{car.price} per day</p>
         <p>Power: {car.power}</p>
         <p>0-60 mph: {car.zeroToSixtyTime} sec</p>
         <p>Seats: {car.seats}</p>
@@ -28,6 +44,7 @@ export const CarCard: FC<Props> = ({car}) => {
              className={styles.car__image}
         />
       </div>
-    </div>
+    </form>
+    </SelectedCarContext.Provider>
   );
 };
