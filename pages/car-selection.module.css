@@ -12,3 +12,32 @@
 .sort__select {
     border: none;
 }
+
+.filter{
+    width: 130px;
+    border: 1px solid black;
+    line-height: 10px;
+    padding: 30px;
+    margin-left: 30px;
+    height: 665px;
+    margin-top: 15px;
+}
+
+.filter__content{
+    padding-left: 30px;
+}
+
+.filter__header{
+    padding-left: 15px;
+}
+
+.car__container{
+    display: flex;
+    margin: 30px auto;
+}
+
+.car__card {
+    margin: 0 auto;
+    text-align: center;
+}
+
