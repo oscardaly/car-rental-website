@@ -1,8 +1,9 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 30px;
     align-items: center;
+    margin: 0 40px;
     color: white;
 }
 
@@ -52,4 +53,13 @@
 
 .body{
     color: rgb(51,51,51);
+}
+
+.border {
+    border-bottom: 3px solid #94CDD1;
+}
+
+.sort__object {
+    display: flex;
+    flex-direction: row;
 }

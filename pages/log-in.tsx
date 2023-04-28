@@ -56,7 +56,8 @@ const LogIn: FC = () => {
   return (
     <div className={styles.logInArticle}>
       <Head>
-        <title>Sign In Nos Rentals</title>
+        <link rel="icon" href="/svg/logo.svg"/>
+        <title>Log In </title>
         <meta name="description" content="Sign in to your account."/>
       </Head>
       <h2>Log In</h2>
@@ -86,7 +87,7 @@ const LogIn: FC = () => {
         />
         <InputField value={honeypotValue} setValue={setHoneypotValue} isHoneyPot/>
         <Button type="submit">
-          Sign In
+          Log In
         </Button>
       </form>
     </div>

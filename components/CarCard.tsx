@@ -19,7 +19,7 @@ export const CarCard: FC<Props> = ({car}) => {
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     context.setCar(car); // Pass the selected car to the context
-    await router.push("/");
+    await router.push("/checkout");
   };
 
 
@@ -42,6 +42,7 @@ export const CarCard: FC<Props> = ({car}) => {
       <div>
         <img src={car.imageUrl}
              className={styles.car__image}
+             alt={`Image of ${car.make} ${car.model}`}
         />
       </div>
     </form>

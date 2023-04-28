@@ -26,6 +26,11 @@ const Checkout: FC = () => {
   const isEmail: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const isNum: RegExp = /\d/;
   const isValidDate: RegExp = /^(0[1-9]|1[0-2])[\/]([0-9]{2})$/;
+
+  const isBookingSuccessful = () => {
+    return "success";
+  };
+
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     let isFormValid = true;
@@ -100,31 +105,31 @@ const Checkout: FC = () => {
 
     if (!isFormValid) return;
 
-    // const startDateParsed = new Date(startDate.value);
-    // const endDateParsed = new Date(endDate.value);
-    //
-    // if (!isFuture(startDateParsed)) {
-    //   isFormValid = false;
-    //   setStartDateErrorMessage("The start date must be in the future.");
-    // }
-    //
-    // if (isBefore(endDateParsed, startDateParsed)) {
-    //   isFormValid = false;
-    //   setEndDateErrorMessage("The end date must be after the start date.");
-    // }
-
     if (isFormValid) {
-      // context.setStartDate(startDate.value);
-      // context.setEndDate(endDate.value);
-      // context.setLocation(location.value);
-
-      await router.push("/booking-confirmation");
+      await router.push("/booking-confirmation/" + isBookingSuccessful());
     }
   };
+
+  const getDaysBetweenDates = (date1: Date, date2: Date): number => {
+    // Calculate the difference in milliseconds between the two dates
+    const diffInMs = date2.getTime() - date1.getTime();
+
+    // Convert the milliseconds to days
+    const days = diffInMs / (1000 * 60 * 60 * 24);
+
+    // Round the result to the nearest whole number and return it
+    return Math.round(days);
+  };
+
+  const costPerDay = context.car?.price ?? 0;
+  const VAT: number = ((15 + (costPerDay ?? 0)) / 100 * 10);
+  const daysBooked = getDaysBetweenDates(new Date(context.startDate), new Date(context.endDate));
+  const Total: number = (costPerDay * daysBooked) + (15 * daysBooked) + VAT;
 
   return (
     <>
       <Head>
+        <link rel="icon" href="/svg/logo.svg"/>
         <title>Checkout</title>
       </Head>
       <p className={styles.breadcrumbs}><Link href="/car-selection">...</Link>/Checkout</p>
@@ -240,16 +245,16 @@ const Checkout: FC = () => {
         <div className={styles.summary__box}>
           <h1>Booking Summary</h1>
           <h3>Car:</h3>
-          <p>Porsche 911</p>
+          <p>{context.car?.make} {context.car?.model}</p>
           <h3>Date of booking:</h3>
-          <p>{context.startDate} -{">"} {context.endDate}</p>
+          <p>{new Date(context.startDate).toDateString()} -{">"} {new Date(context.endDate).toDateString()}</p>
           <h3>Pickup Location:</h3>
           <p>{context.location}</p>
           <h3>Total cost:</h3>
-          <p>Cost per day: £150</p>
-          <p>Insurance per day: £10</p>
-          <p>VAT of 10%: £{(10) / 100 * 10}</p>
-          <p><strong>Total: £{10}</strong></p>
+          <p>Cost per day: £{costPerDay}</p>
+          <p>Insurance per day: £15</p>
+          <p>VAT of 10%: £{VAT.toFixed(2)}</p>
+          <p><strong>Total: £{Total.toFixed(2)}</strong></p>
         </div>
       </div>
     </>

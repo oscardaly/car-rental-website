@@ -66,7 +66,8 @@ export default function Home() {
   return (
     <div className={styles.index}>
       <Head>
-        <title>NOS Rentals</title>
+        <link rel="icon" href="/svg/logo.svg"/>
+        <title>Home</title>
       </Head>
       <div className={styles.carouselWrapper}>
         <ImageCarousel images={images}/>

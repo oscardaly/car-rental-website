@@ -4,13 +4,12 @@ import React, {FC} from "react";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 import {useRouter} from "next/router";
-import {Car} from "@/components/Car";
 import {useAppContext} from "../../context/state";
 
 const Result: FC = () => {
   const router = useRouter();
   const context = useAppContext();
-  const {result, carId} = router.query;
+  const {result} = router.query;
   const success = result === "success";
   let title: string;
   let leftDescription: string;
@@ -35,6 +34,7 @@ const Result: FC = () => {
   return (
     <div className={s.container}>
       <Head>
+        <link rel="icon" href="/svg/logo.svg"/>
         <title>Booking Confirmation</title>
       </Head>
       <div className={s.header}>
@@ -47,7 +47,7 @@ const Result: FC = () => {
             />
             <img src={imagePath}
                  alt="Image of cars booked"
-                 className={`${s.footer__image} ${s.gradient}`}
+                 className={s.car__image}
             />
           </div>
         }

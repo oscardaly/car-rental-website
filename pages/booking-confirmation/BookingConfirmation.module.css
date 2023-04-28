@@ -23,8 +23,8 @@
 }
 
 .car__image {
-    width: 200px;
-    height: 200px;
+    max-width: 1000px;
+    max-height: 500px;
 }
 
 .header {
@@ -32,4 +32,5 @@
     flex-direction: column;
     align-items: center;
     color: white;
+    margin: 100px;
 }

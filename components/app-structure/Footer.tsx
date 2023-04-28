@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./Footer.module.css";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -24,7 +25,9 @@ const Footer = () => {
             <td className={s.footer__column}>
               <p><b>The Company</b></p>
               <p>Our Team</p>
-              <p>About us</p>
+              <Link href="/about-us">
+                <p>About us</p>
+              </Link>
               <p>Careers</p>
             </td>
           </tr>

@@ -106,9 +106,10 @@ const CarSelection: FC = () => {
   return (
     <div className={styles.container}>
       <Head>
+        <link rel="icon" href="/svg/logo.svg"/>
         <title>Select Car</title>
       </Head>
-      <div className={styles.header}>
+      <div className={`${styles.header} ${styles.border}`}>
         <p><Link href="/">...</Link>/Car Selection</p>
         <div className={styles.header}>
           <h2>Choose your car:</h2>
@@ -118,7 +119,7 @@ const CarSelection: FC = () => {
             className={styles.search__input}
           />
         </div>
-        <div className={styles.header}>
+        <div className={styles.sort__object}>
           <p>Sort by:</p>
           <select
             className={styles.sort__select}

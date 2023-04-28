@@ -3,8 +3,7 @@
     flex-direction: column;
     align-items: center;
     color: white;
-    margin: 150px;
-    margin-bottom: 300px;
+    margin: 300px auto;
 }
 
 .logInArticle > h2 {
