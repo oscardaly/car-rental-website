@@ -1,5 +1,5 @@
 import {FC, FormEvent, useState} from "react";
-import styles from "./AboutUs.module.css";
+import styles from "./about-us.module.css";
 import {InputField, TextArea} from "@/components/InputField";
 import {Button} from "@/components/Button";
 import {useFormField} from "../helpers/hooks/UseFormField";
