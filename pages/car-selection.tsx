@@ -1,6 +1,6 @@
 import styles from "@/pages/car-selection.module.css";
 import Head from "next/head";
-import {FC, FormEvent, useEffect, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {InputField} from "@/components/InputField";
 import {CarCard} from "@/components/CarCard";
 import {Car} from "@/components/Car";
