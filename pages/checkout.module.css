@@ -5,10 +5,16 @@
     max-width: 520px;
     width: 100%;
     display: block;
+    color: white;
+}
+
+.breadcrumbs{
+    color: white;
 }
 
 .subheader {
     text-align: center;
+    color: white;
 }
 
 .small__input {
@@ -36,6 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 .form {

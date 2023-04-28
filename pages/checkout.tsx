@@ -6,6 +6,7 @@ import {useFormField} from "../helpers/hooks/UseFormField";
 import {useAppContext} from "../context/state";
 import {Button} from "@/components/Button";
 import {useRouter} from "next/router";
+import Link from "next/link";
 
 const Checkout: FC = () => {
   const context = useAppContext();
@@ -126,7 +127,7 @@ const Checkout: FC = () => {
       <Head>
         <title>Checkout</title>
       </Head>
-      <p>.../Car Selection</p>
+      <p className={styles.breadcrumbs}><Link href="/car-selection">...</Link>/Checkout</p>
       <h1 className={styles.subheader}>Checkout</h1>
       <div className={styles.form}>
         <form onSubmit={onSubmit}>

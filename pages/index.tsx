@@ -62,7 +62,6 @@ export default function Home() {
       await router.push("/car-selection");
     }
   };
-  const {car} = useAppContext();
 
   return (
     <div className={styles.index}>

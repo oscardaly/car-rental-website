@@ -4,23 +4,26 @@ import React, {FC} from "react";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 import {useRouter} from "next/router";
+import {Car} from "@/components/Car";
+import {useAppContext} from "../../context/state";
 
 const Result: FC = () => {
   const router = useRouter();
+  const context = useAppContext();
   const {result, carId} = router.query;
   const success = result === "success";
   let title: string;
   let leftDescription: string;
-  let imagePath: string = "";
+  let imagePath;
   const rightDescription: string = "If you have any questions, concerns or feedback, please email us at: info@nosrentals.com or " +
     "contact us on one of our social channels and we'll be more than happy to help. Thank you!";
   const {width, height} = useWindowSize();
 
   if (success) {
     title = "Thank you for booking!";
-    const car: Car = getCarById(carId);
-    leftDescription = car.getDescription;
-    imagePath = car.getImagePath;
+    const car = context.car;
+    leftDescription = "Booking number: 0001 \n Car: "+context.car?.make+" "+context.car?.model+"\n Date Booked: "+context.startDate +" -> "+context.endDate;
+    imagePath = car?.imageUrl;
   }
 
   else {

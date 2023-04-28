@@ -1,10 +1,11 @@
 import styles from "@/pages/car-selection.module.css";
 import Head from "next/head";
-import {FC, useEffect, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import {InputField} from "@/components/InputField";
 import {CarCard} from "@/components/CarCard";
 import {Car} from "@/components/Car";
 import {useRouter} from "next/router";
+import Link from "next/link";
 
 
 const CarSelection: FC = () => {
@@ -108,7 +109,7 @@ const CarSelection: FC = () => {
         <title>Select Car</title>
       </Head>
       <div className={styles.header}>
-        <p>.../Car Selection</p>
+        <p><Link href="/">...</Link>/Car Selection</p>
         <div className={styles.header}>
           <h2>Choose your car:</h2>
           <InputField

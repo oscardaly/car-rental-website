@@ -4,6 +4,7 @@
     justify-content: space-between;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
     padding: 10px;
+    background-color:white !important;
 }
 
 .header__items {

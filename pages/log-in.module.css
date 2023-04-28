@@ -2,10 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
+    margin: 150px;
+    margin-bottom: 300px;
 }
 
 .logInArticle > h2 {
-    margin-bottom: 0;
+    margin-bottom: 75px;
 }
 
 .form {
