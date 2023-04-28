@@ -10,6 +10,7 @@ import {useAppContext} from "../context/state";
 import {useRouter} from "next/router";
 import {useGetHomescreenImages} from "../helpers/hooks/UseGetHomescreenImages";
 
+
 export default function Home() {
   const context = useAppContext();
   const router = useRouter();
@@ -65,7 +66,8 @@ export default function Home() {
   return (
     <div className={styles.index}>
       <Head>
-        <title>NOS Rentals</title>
+        <link rel="icon" href="/svg/logo.svg"/>
+        <title>Home</title>
       </Head>
       <div className={styles.carouselWrapper}>
         <ImageCarousel images={images}/>

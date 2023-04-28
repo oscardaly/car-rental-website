@@ -18,7 +18,7 @@ const Header: FC = () => (
       <h2 className={s.separator}>|</h2>
       <h2 className={s.languageIndicator}>EN</h2>
 
-      <Link className={s.header__button} href="/">Log In </Link>
+      <Link className={s.header__button} href="/log-in">Log In </Link>
       <h2 className={s.separator}>|</h2>
       <Link className={s.header__button} href="/"> Sign Up</Link>
     </div>

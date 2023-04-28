@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "make": "Porsche",
+    "model": "911 Carrera RS 2.7",
+    "price": 143,
+    "power": 210,
+    "zeroToSixtyTime": 5.6,
+    "seats": 2,
+    "transmission": "Manual",
+    "popularity": 9,
+    "imageUrl": "/porsche-911-carrera.png"
+  },
+  {
+    "id": 2,
+    "make": "Ford",
+    "model": "Mustang Boss 302",
+    "price": 94,
+    "power": 290,
+    "zeroToSixtyTime": 6.9,
+    "seats": 4,
+    "transmission": "Manual",
+    "popularity": 9,
+    "imageUrl": "1969-ford-mustang-bosa.jpeg"
+  },
+  {
+    "id": 3,
+    "make": "BMW",
+    "model": "2002 Turbo",
+    "price": 83,
+    "power": 170,
+    "zeroToSixtyTime": 6.9,
+    "seats": 4,
+    "transmission": "Manual",
+    "popularity": 1,
+    "imageUrl": "/bmw-2002-turbo.png"
+  },
+  {
+    "id": 4,
+    "make": "Alfa Romeo",
+    "model": "Giulia Sprint GTA",
+    "price": 155,
+    "power": 170,
+    "zeroToSixtyTime": 8.5,
+    "seats": 2,
+    "transmission": "Manual",
+    "popularity": 5,
+    "imageUrl": "/alfa-romeo-giulia.png"
+  },
+  {
+    "id": 5,
+    "make": "Jaguar",
+    "model": "E-Type Series 1",
+    "price": 221,
+    "power": 265,
+    "zeroToSixtyTime": 6.4,
+    "seats": 2,
+    "transmission": "Manual",
+    "popularity": 10,
+    "imageUrl": "/1962jaguar-e-type.png"
+  },
+  {
+    "id": 6,
+    "make": "Ferrari",
+    "model": "Testarossa",
+    "price": 750,
+    "power": 390,
+    "zeroToSixtyTime": 5.2,
+    "seats": 2,
+    "transmission": "Manual",
+    "popularity": 9,
+    "imageUrl": "/ferrari-testarossa.jpg"
+  }
+  ]

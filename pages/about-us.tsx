@@ -1,5 +1,5 @@
 import {FC, FormEvent, useState} from "react";
-import styles from "./AboutUs.module.css";
+import styles from "./about-us.module.css";
 import {InputField, TextArea} from "@/components/InputField";
 import {Button} from "@/components/Button";
 import {useFormField} from "../helpers/hooks/UseFormField";
@@ -38,6 +38,7 @@ const AboutUs: FC = () => {
   return (
     <div className={styles.aboutUsArticle}>
       <Head>
+        <link rel="icon" href="/svg/logo.svg"/>
         <title>About NOS Rentals</title>
         <meta name="description" content="Welcome to NOS rentals! Learn all about us."/>
       </Head>
@@ -86,6 +87,7 @@ const AboutUs: FC = () => {
           value={honeypotValue}
           setValue={setHoneypotValue}
           isHoneyPot
+          placeholder={"Empty honeypot"}
         />
         <Button type="submit">
           Submit
