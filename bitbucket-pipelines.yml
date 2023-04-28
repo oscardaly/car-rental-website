@@ -14,11 +14,9 @@ pipelines:
             script:
               - yarn install
               - yarn test && yarn build
-            deployment: production
         - step:
             name: Code linting
             script:
               - yarn lint
             caches:
               - node
-            deployment: production
