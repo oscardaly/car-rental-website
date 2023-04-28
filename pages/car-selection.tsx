@@ -117,11 +117,13 @@ const CarSelection: FC = () => {
             setValue={setSelectedFilter}
             placeholder={"Your make/model"}
             className={styles.search__input}
+            testId="search-input"
           />
         </div>
         <div className={styles.sort__object}>
           <p>Sort by:</p>
           <select
+            data-testid="sort-dropdown"
             className={styles.sort__select}
             defaultValue="Price"
             onChange={(event) => setSortingMethod(event.target.value)}

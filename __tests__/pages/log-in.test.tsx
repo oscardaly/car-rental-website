@@ -38,7 +38,7 @@ describe("Log in page", () => {
 
       await userEvent.click(await screen.findByText("Log Out"));
 
-      expect(await screen.findByText("Log In")).toBeDefined();
+      expect(await screen.findByText("Log In Now")).toBeDefined();
       expect(cookiesRemoveMock).toHaveBeenCalledWith("username");
     });
   });
@@ -51,7 +51,7 @@ describe("Log in page", () => {
     it("should show an error for an invalid user credentials", async () => {
       render(<LogIn/>);
 
-      await userEvent.click(await screen.findByText("Sign In"));
+      await userEvent.click(await screen.findByText("Log In Now"));
       const error = await screen.findByText("Username or password incorrect");
 
       expect(error).toBeDefined();
@@ -63,7 +63,7 @@ describe("Log in page", () => {
       await fillInFormField("you@example.com", "admin");
       await fillInFormField("Password", "admin");
 
-      await userEvent.click(await screen.findByText("Sign In"));
+      await userEvent.click(await screen.findByText("Log In Now"));
 
       expect(mockPushLocation).toHaveBeenCalledWith("/");
       expect(cookiesSetMock).toHaveBeenCalledWith("username", "admin");

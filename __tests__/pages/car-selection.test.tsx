@@ -1,26 +1,28 @@
 import {render, fireEvent, screen} from "@testing-library/react";
 import CarSelection from "@/pages/car-selection";
 import {Car} from "@/components/Car";
-import {useRouter} from "next/router";
+import {global} from "styled-jsx/css";
 
-jest.mock("next/router", () => ({
-  useRouter: jest.fn(),
-}));
-
-const mockRouter = {
-  push: jest.fn(),
-};
+const mockUseRouter = jest.spyOn(require("next/router"), "useRouter");
+const mockPushLocation = jest.fn();
 
 describe("Car Selection Page", () => {
   let cars: Car[];
 
   beforeEach(() => {
+    mockUseRouter.mockImplementation(() => ({
+      pathname: "/",
+      push: mockPushLocation,
+      query: {
+        filter: undefined
+      }
+    }));
     cars = [
       {
         id: 1,
         make: "Honda",
         model: "Civic",
-        price: 20000,
+        price: 29000,
         power: 150,
         zeroToSixtyTime: 8.2,
         seats: 5,
@@ -53,10 +55,17 @@ describe("Car Selection Page", () => {
         imageUrl: "https://example.com/mustang.jpg",
       },
     ];
+
+    global.fetch = jest.fn().mockResolvedValue({
+      json: jest.fn().mockResolvedValue(
+        cars
+      )
+    });
   });
 
-  beforeEach(() => {
-    (useRouter as jest.Mock).mockReturnValue(mockRouter);
+  afterEach(() => {
+    global.fetch.mockClear();
+    delete global.fetch;
   });
 
   it("should display all cars when no search term is entered", async () => {
@@ -83,14 +92,14 @@ describe("Car Selection Page", () => {
     render(<CarSelection/>);
 
     const sortDropdown = await screen.findByTestId("sort-dropdown");
-    fireEvent.change(sortDropdown, {target: {value: "price-low-to-high"}});
+    fireEvent.change(sortDropdown, {target: {value: "Price"}});
 
     const carElements = await screen.findAllByTestId("car-card");
     const sortedCars = [...cars].sort((a, b) => a.price - b.price);
 
     expect(carElements.length).toBe(cars.length);
-    carElements.forEach((car, index) => {
-      expect(car).toHaveTextContent(sortedCars[index].brand);
+    sortedCars.forEach((car, index) => {
+      expect(carElements[index]).toHaveTextContent(car.make);
     });
   });
 
@@ -103,7 +112,7 @@ describe("Car Selection Page", () => {
     fireEvent.change(searchInput, {target: {value: searchTerm}});
 
     const sortDropdown = await screen.findByTestId("sort-dropdown");
-    fireEvent.change(sortDropdown, {target: {value: "power-high-to-low"}});
+    fireEvent.change(sortDropdown, {target: {value: "Price"}});
 
     // const carElements = await screen.findAllByTestId("
   });

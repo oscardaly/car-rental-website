@@ -87,7 +87,7 @@ const LogIn: FC = () => {
         />
         <InputField value={honeypotValue} setValue={setHoneypotValue} isHoneyPot/>
         <Button type="submit">
-          Log In
+          Log In Now
         </Button>
       </form>
     </div>

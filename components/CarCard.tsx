@@ -25,7 +25,7 @@ export const CarCard: FC<Props> = ({car}) => {
 
   return (
     <SelectedCarContext.Provider value={selectedCarContext}>
-    <form onSubmit={onSubmit} className={styles.car__card}>
+    <form onSubmit={onSubmit} className={styles.car__card} data-testid="car-card">
       <div className={styles.car__content}>
         <h1>{car.make} {car.model}</h1>
         <p>Price: £{car.price} per day</p>
