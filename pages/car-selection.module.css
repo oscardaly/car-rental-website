@@ -63,3 +63,8 @@
     display: flex;
     flex-direction: row;
 }
+
+.no__cars__header {
+    color: white;
+    margin: 200px;
+}

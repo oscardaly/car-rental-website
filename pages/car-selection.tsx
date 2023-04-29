@@ -174,9 +174,12 @@ const CarSelection: FC = () => {
             </div>
           </div>
           <div className={styles.car__card}>
-            {filteredCars.map((car) => (
+            { filteredCars.map((car) => (
               <CarCard key={car.id} car={car}/>
             ))}
+            { filteredCars.length === 0 &&
+              <h2 className={styles.no__cars__header}>No cars available with these filters</h2>
+            }
           </div>
         </div>
       </div>

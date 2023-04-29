@@ -116,3 +116,11 @@ export default function Home() {
     </div>
   );
 }
+
+//TODO
+// - deselect filters
+// - pipeline
+// - Euros for prices
+// - fix sample car data
+// - change location to select
+// - Highlight active filter

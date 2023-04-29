@@ -70,5 +70,65 @@
     "transmission": "Manual",
     "popularity": 9,
     "imageUrl": "/ferrari-testarossa.jpg"
+  },
+  {
+    "id": 7,
+    "make": "McLaren",
+    "model": "720S",
+    "price": 315000,
+    "power": 710,
+    "zeroToSixtyTime": 2.9,
+    "seats": 2,
+    "transmission": "Automatic",
+    "popularity": 7,
+    "imageUrl": "https://images.unsplash.com/photo-1594084171242-8e4a97b2c205"
+  },
+  {
+    "id": 8,
+    "make": "Lamborghini",
+    "model": "Huracan",
+    "price": 274390,
+    "power": 602,
+    "zeroToSixtyTime": 3.4,
+    "seats": 2,
+    "transmission": "Automatic",
+    "popularity": 9,
+    "imageUrl": "https://images.unsplash.com/photo-1594083803325-dcb2c1d76350"
+  },
+  {
+    "id": 9,
+    "make": "Ferrari",
+    "model": "488 Pista",
+    "price": 349990,
+    "power": 710,
+    "zeroToSixtyTime": 2.8,
+    "seats": 2,
+    "transmission": "Automatic",
+    "popularity": 10,
+    "imageUrl": "https://images.unsplash.com/photo-1594084155568-8a291986329b"
+  },
+  {
+    "id": 10,
+    "make": "Aston Martin",
+    "model": "DBS Superleggera",
+    "price": 338000,
+    "power": 715,
+    "zeroToSixtyTime": 3.2,
+    "seats": 2,
+    "transmission": "Automatic",
+    "popularity": 6,
+    "imageUrl": "https://images.unsplash.com/photo-1594084025945-5f5bb06b5d6e"
+  },
+  {
+    "id": 11,
+    "make": "Audi",
+    "model": "R8",
+    "price": 195000,
+    "power": 602,
+    "zeroToSixtyTime": 3.2,
+    "seats": 2,
+    "transmission": "Automatic",
+    "popularity": 8,
+    "imageUrl": "https://images.unsplash.com/photo-1594083984162-7f0cfc9c5d68"
   }
-  ]
+]
